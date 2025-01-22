@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "type": "coreclr",
+      "request": "launch",
+      "name": "Catalog.API",
+      "program": "${workspaceFolder}/src/Services/Catalog/Catalog.API/bin/Debug/net8.0/Catalog.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Services/Catalog/Catalog.API",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Views"
+      }
+    }
+  ]
+}
