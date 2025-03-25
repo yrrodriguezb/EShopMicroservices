@@ -14,6 +14,18 @@
       "sourceFileMap": {
         "/Views": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Views"
       }
+    },
+    {
+      "type": "coreclr",
+      "request": "launch",
+      "name": "Basket.API",
+      "program": "${workspaceFolder}/src/Services/Basket/Basket.API/bin/Debug/net8.0/Basket.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Services/Basket/Basket.API",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     }
   ]
 }
