@@ -1,5 +1,6 @@
 {
   "configurations": [
+
     {
       "type": "coreclr",
       "request": "launch",
@@ -22,6 +23,18 @@
       "program": "${workspaceFolder}/src/Services/Basket/Basket.API/bin/Debug/net8.0/Basket.API.dll",
       "args": [],
       "cwd": "${workspaceFolder}/src/Services/Basket/Basket.API",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "type": "coreclr",
+      "request": "launch",
+      "name": "Discount.Grpc",
+      "program": "${workspaceFolder}/src/Services/Discount/Discount.Grpc/bin/Debug/net8.0/Discount.Grpc.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Services/Discount/Discount.Grpc",
       "stopAtEntry": false,
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
