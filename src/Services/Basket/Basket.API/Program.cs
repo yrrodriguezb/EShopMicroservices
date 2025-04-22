@@ -1,3 +1,4 @@
+using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 
 // Add services to the container
+
+// Application services
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config => {
   config.RegisterServicesFromAssembly(assembly);
@@ -13,6 +16,7 @@ builder.Services.AddMediatR(config => {
   config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
+// Data services
 builder.Services.AddMarten(options => {
     options.Connection(builder.Configuration.GetConnectionString("Database")!);
     options.Schema.For<ShoppingCart>().Identity(x => x.UserName);
@@ -25,6 +29,21 @@ builder.Services.AddStackExchangeRedisCache(options => {
     options.Configuration = builder.Configuration.GetConnectionString("Redis")!;
 });
 
+// Grpc services
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options => {
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+}).ConfigurePrimaryHttpMessageHandler(() => {
+    var handler = new HttpClientHandler
+    {
+        ServerCertificateCustomValidationCallback = 
+            HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+    };
+
+    return handler;
+});
+
+
+// Cross cutting services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddHealthChecks()

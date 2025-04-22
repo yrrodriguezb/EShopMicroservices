@@ -1,6 +1,5 @@
 {
   "configurations": [
-
     {
       "type": "coreclr",
       "request": "launch",
@@ -47,6 +46,24 @@
       "preLaunchTask": "Run Docker Container",
       "netCore": {
         "appProject": "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj"
+      }
+    },
+    {
+      "name": "Catalog.API in Docker",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Run Docker Container",
+      "netCore": {
+        "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.API/Catalog.API.csproj"
+      }
+    },
+    {
+      "name": "Discount.Grpc in Docker",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Run Docker Container",
+      "netCore": {
+        "appProject": "${workspaceFolder}/src/Services/Discount/Discount.Grpc/Discount.Grpc.csproj"
       }
     }
   ]

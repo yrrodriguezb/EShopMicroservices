@@ -2,6 +2,8 @@
 
 Microservices with C# and Docker [Mehmet Ozkaya](https://github.com/mehmetozkaya)
 
+**[Repositorio original](https://github.com/mehmetozkaya/EShopMicroservices)**
+
 ## Introduction
 
 EShopMicroservices is a sample project demonstrating how to build microservices using ASP.NET Core and Docker. This project includes various microservices, each responsible for a specific domain, and demonstrates best practices for building, deploying, and managing microservices.
@@ -20,6 +22,15 @@ EShopMicroservices is a sample project demonstrating how to build microservices 
     ```bash
     git clone https://github.com/yrrodriguezb/EShopMicroservices.git
     cd EShopMicroservices/src
+    ```
+
+2. Create cert https
+    ```bash
+    dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\catalog.api.pfx" -p "123456"
+    dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\basket.api.pfx" -p "123456"
+    dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\discount.grpc.pfx" -p "123456"
+
+    dotnet dev-certs https --trust
     ```
 
 2. Build and run the project with Docker Compose:
