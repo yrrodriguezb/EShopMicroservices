@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ordering.Infrastructure;
@@ -13,6 +14,16 @@ public static class DependencyInjection
         // services.AddScoped<IOrderRepository, OrderRepository>();
 
         var connectionString = configuration.GetConnectionString("Database");
+
+        // Add services to the container.
+        services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
+        services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
+        {
+            options.AddInterceptors(serviceProvider.GetRequiredService<ISaveChangesInterceptor>());
+            options.UseSqlServer(connectionString);  
+        });
 
         return services;
     }

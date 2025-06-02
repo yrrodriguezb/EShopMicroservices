@@ -31,6 +31,15 @@ services:
     ports:
       - "6379:6379"
 
+  orderdb:
+    container_name: orderdb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=API123456**AaEeZz!#$%
+    restart: always
+    ports:
+      - "1433:1433"
+
   catalog.api:
     environment:  
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/home/app/.aspnet/https/catalog.api.pfx
