@@ -24,8 +24,8 @@ public class GetOrdersHandler(IApplicationDbContext dbContext) : IQueryHandler<G
             new PaginatedResult<OrderDto>
             (
                 pageIndex,
+                pageSize,
                 totalCount,
-                pageIndex,
                 orders.ToOrderDtoList()
             )
         );

@@ -2,11 +2,21 @@
 
 Microservices with C# and Docker [Mehmet Ozkaya](https://github.com/mehmetozkaya)
 
-**[Repositorio original](https://github.com/mehmetozkaya/EShopMicroservices)**
+## Repos
+
+- [EShopMicroservices Repositorio original](https://github.com/mehmetozkaya/EShopMicroservices)
+- [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks)
 
 ## Introduction
 
 EShopMicroservices is a sample project demonstrating how to build microservices using ASP.NET Core and Docker. This project includes various microservices, each responsible for a specific domain, and demonstrates best practices for building, deploying, and managing microservices.
+
+## Libraries
+
+- [Carter](https://github.com/CarterCommunity/Carter) 
+- [Mapster](https://github.com/MapsterMapper/Mapster)
+- [MediatR](https://github.com/jbogard/MediatR)
+- [Fluent Validation](https://docs.fluentvalidation.net/en/latest/aspnet.html)
 
 ## Prerequisites
 
