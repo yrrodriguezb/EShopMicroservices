@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Ordering.Domain.Models;
-
 namespace Ordering.Application.Data;
 
 public interface IApplicationDbContext

@@ -404,7 +404,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Cart\": {\r\n        \"UserName\": \"yrrodriguezb\",\r\n        \"Items\": [\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"3f532938-b7c9-49b5-8442-ff72a9567db8\",\r\n                \"ProductName\": \"IPhone 16\"\r\n            },\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"da284884-2232-43ec-9a62-6064dfd0cb21\",\r\n                \"ProductName\": \"Samsung 20\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"raw": "{\r\n    \"Cart\": {\r\n        \"UserName\": \"john\",\r\n        \"Items\": [\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"3f532938-b7c9-49b5-8442-ff72a9567db8\",\r\n                \"ProductName\": \"IPhone 16\"\r\n            },\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"da284884-2232-43ec-9a62-6064dfd0cb21\",\r\n                \"ProductName\": \"Samsung 20\"\r\n            }\r\n        ]\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -437,6 +437,33 @@
 							"path": [
 								"basket",
 								"yrrodriguezb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Checkout Basket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BasketCheckoutDto\": {\r\n        \"userName\": \"john\",\r\n        \"customerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"totalPrice\": 259.99,\r\n        \"firstName\": \"john\",\r\n        \"lastName\": \"rodriguez\",\r\n        \"emailAddress\": \"john@rodriguez.com\",\r\n        \"addressLine\": \"123 Main Street\",\r\n        \"country\": \"USA\",\r\n        \"state\": \"California\",\r\n        \"zipCode\": \"90001\",\r\n        \"cardName\": \"YR\",\r\n        \"cardNumber\": \"4111111111111111\",\r\n        \"expiration\": \"12/27\",\r\n        \"cvv\": \"123\",\r\n        \"paymentMethod\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basket_url}}/basket/checkout",
+							"host": [
+								"{{basket_url}}"
+							],
+							"path": [
+								"basket",
+								"checkout"
 							]
 						}
 					},
