@@ -3,6 +3,18 @@
     {
       "type": "coreclr",
       "request": "launch",
+      "name": "API YardApiGateway",
+      "program": "${workspaceFolder}/src/ApiGateways/YardApiGateway/bin/Debug/net8.0/YardApiGateway.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/ApiGateways/YardApiGateway",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "type": "coreclr",
+      "request": "launch",
       "name": "Catalog.API",
       "program": "${workspaceFolder}/src/Services/Catalog/Catalog.API/bin/Debug/net8.0/Catalog.API.dll",
       "args": [],

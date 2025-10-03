@@ -40,7 +40,8 @@ EShopMicroservices is a sample project demonstrating how to build microservices 
     dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\basket.api.pfx" -p "123456"
     dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\discount.grpc.pfx" -p "123456"
     dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\ordering.api.pfx" -p "123456"
-
+    dotnet dev-certs https -ep "%APPDATA%\ASP.NET\Https\yarpapigateway.pfx" -p "123456"
+    
     dotnet dev-certs https --trust
     ```
 

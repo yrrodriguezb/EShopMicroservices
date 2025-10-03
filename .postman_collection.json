@@ -470,6 +470,407 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "YardApiGateway",
+			"item": [
+				{
+					"name": "Catalog",
+					"item": [
+						{
+							"name": "GET Product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{yarp_url}}/catalog-service/products?pageNumber=1&pageSize=5",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"catalog-service",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ProductById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{yarp_url}}/catalog-service/products/5334c996-8457-4cf0-815c-ed2b77c4ff61",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"catalog-service",
+										"products",
+										"5334c996-8457-4cf0-815c-ed2b77c4ff61"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ProductByCategory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{yarp_url}}/catalog-service/products/category/Smart Phone",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"catalog-service",
+										"products",
+										"category",
+										"Smart Phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Product C\",\r\n    \"Category\": [\"C1\"],\r\n    \"Description\": \"Description product A\",\r\n    \"ImageFile\": \"IMG\",\r\n    \"Price\": 134\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/catalog-service/products",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"catalog-service",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"0192d5ed-9b5b-4785-8cf6-cb1e3c5b853f\",\r\n    \"name\": \"Product A\",\r\n    \"description\": \"Description product A\",\r\n    \"price\": 250,\r\n    \"category\": [\r\n        \"c1\",\r\n        \"c2\",\r\n        \"c3\"\r\n    ],\r\n    \"imageFile\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/catalog-service/products/0192d5ed-9b5b-4785-8cf6-cb1e3c5b853f",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"catalog-service",
+										"products",
+										"0192d5ed-9b5b-4785-8cf6-cb1e3c5b853f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Basket",
+					"item": [
+						{
+							"name": "GET BssketByUserName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{yarp_url}}/basket-service/basket/yrrodriguezb",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"basket-service",
+										"basket",
+										"yrrodriguezb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Store Basket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Cart\": {\r\n        \"UserName\": \"john\",\r\n        \"Items\": [\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"3f532938-b7c9-49b5-8442-ff72a9567db8\",\r\n                \"ProductName\": \"IPhone 16\"\r\n            },\r\n            {\r\n                \"Quantity\": 2,\r\n                \"Color\": \"Red\",\r\n                \"Price\": 400,\r\n                \"ProductId\": \"da284884-2232-43ec-9a62-6064dfd0cb21\",\r\n                \"ProductName\": \"Samsung 20\"\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/basket-service/basket/",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"basket-service",
+										"basket",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE BasketByUserName",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{yarp_url}}/basket-service/basket/yrrodriguezb",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"basket-service",
+										"basket",
+										"yrrodriguezb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Checkout Basket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"BasketCheckoutDto\": {\r\n        \"userName\": \"john\",\r\n        \"customerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"totalPrice\": 259.99,\r\n        \"firstName\": \"john\",\r\n        \"lastName\": \"rodriguez\",\r\n        \"emailAddress\": \"john@rodriguez.com\",\r\n        \"addressLine\": \"123 Main Street\",\r\n        \"country\": \"USA\",\r\n        \"state\": \"California\",\r\n        \"zipCode\": \"90001\",\r\n        \"cardName\": \"YR\",\r\n        \"cardNumber\": \"4111111111111111\",\r\n        \"expiration\": \"12/27\",\r\n        \"cvv\": \"123\",\r\n        \"paymentMethod\": 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/basket-service/basket/checkout",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"basket-service",
+										"basket",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ordering",
+					"item": [
+						{
+							"name": "POST Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_4\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"Id\": \"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e\", // Id de base de datos\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_5\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Yeison\",\r\n            \"LastName\": \"Rodriguez\",\r\n            \"EmailAddress\": \"yeison@Rodriguez.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Orders Paginated",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"Id\": \"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e\", // Id de base de datos\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_5\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Yeison\",\r\n            \"LastName\": \"Rodriguez\",\r\n            \"EmailAddress\": \"yeison@Rodriguez.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders?PageIndex=1&PageSize=2",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "PageIndex",
+											"value": "1"
+										},
+										{
+											"key": "PageSize",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Orders By CustomerId",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"Id\": \"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e\", // Id de base de datos\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_5\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Yeison\",\r\n            \"LastName\": \"Rodriguez\",\r\n            \"EmailAddress\": \"yeison@Rodriguez.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders/customer/58c49479-ec65-4de2-86e7-033c546291aa",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders",
+										"customer",
+										"58c49479-ec65-4de2-86e7-033c546291aa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"Id\": \"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e\", // Id de base de datos\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_5\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Yeison\",\r\n            \"LastName\": \"Rodriguez\",\r\n            \"EmailAddress\": \"yeison@Rodriguez.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders/3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders",
+										"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET Orders By Name",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Order\": {\r\n        \"Id\": \"3ab7bf05-c0b4-43d6-bd08-f2e1815cc58e\", // Id de base de datos\r\n        \"CustomerId\": \"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d\",\r\n        \"OrderName\": \"ORD_5\",\r\n        \"ShippingAddress\": {\r\n            \"FirstName\": \"Yeison\",\r\n            \"LastName\": \"Rodriguez\",\r\n            \"EmailAddress\": \"yeison@Rodriguez.com\",\r\n            \"AddressLine\": \"Wiegand Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"32345\"\r\n        },\r\n        \"BillingAddress\": {\r\n            \"FirstName\": \"Valentina\",\r\n            \"LastName\": \"Legros\",\r\n            \"EmailAddress\": \"legros@legros.com\",\r\n            \"AddressLine\": \"Pass Suite 123\",\r\n            \"Country\": \"USA\",\r\n            \"State\": \"Oklahoma\",\r\n            \"ZipCode\": \"12353\"\r\n        },\r\n        \"Payment\": {\r\n            \"CardName\": \"Valentina Legros\",\r\n            \"CardNumber\": \"1234-1234-5678-2344\",\r\n            \"Expiration\": \"01/28\",\r\n            \"Cvv\": \"123\",\r\n            \"PaymentMethod\": 123\r\n        },\r\n        \"Status\": 2,\r\n        \"OrderItems\": [\r\n            {\r\n                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 750\r\n            },\r\n            {\r\n                \"ProductId\": \"4f136e9f-ff8c-4c1f-9a33-d12f689bdab8\",\r\n                \"Quantity\": 2,\r\n                \"Price\": 560\r\n            }\r\n        ]\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{yarp_url}}/ordering-service/orders/ORD_1",
+									"host": [
+										"{{yarp_url}}"
+									],
+									"path": [
+										"ordering-service",
+										"orders",
+										"ORD_1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	]
 }
