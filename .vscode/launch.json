@@ -1,6 +1,26 @@
 {
   "configurations": [
     {
+      "name": "Shopping.Web",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}src/WebApps/Shopping.Web/bin/Debug/net8.0/Shopping.Web.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
       "type": "coreclr",
       "request": "launch",
       "name": "API YardApiGateway",
